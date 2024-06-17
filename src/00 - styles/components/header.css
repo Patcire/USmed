@@ -1,0 +1,36 @@
+.header{
+    /*
+    background-color: var(--color-secondary);
+     */
+    height: 10vw;
+    display: flex;
+    flex-direction: row;
+    padding: 10% 10% 2% 10%;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10%;
+    font-family: var(--main-font), fantasy;
+    border-bottom: 1px solid gray;
+    /*background-color: #03B5AA;*/
+    .header__logo{
+        display: flex;
+        flex-direction: column;
+    }
+    .header__title {
+        font-family: Ebrima, serif;
+        color: var(--color-accent);
+        font-size: 4rem;
+        font-weight: bold;
+        -webkit-text-stroke: 1px #f17b19;
+    }
+    .header__subtitle {
+        font-family: Ebrima, serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: black;
+    }
+    .header__search{
+        width: 350px;
+    }
+
+}
