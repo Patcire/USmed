@@ -1,5 +1,6 @@
 import {Outlet} from "react-router-dom";
 import {CustomHeader} from "../04 - components/CustomHeader.jsx";
+import {Container} from "@mui/material";
 
 const RootLayout = () => {
 
@@ -7,7 +8,9 @@ const RootLayout = () => {
     <>
         <CustomHeader></CustomHeader>
         <main>
-            <Outlet></Outlet>
+            <Container maxWidth="md">
+                <Outlet></Outlet>
+            </Container>
         </main>
     </>
 )

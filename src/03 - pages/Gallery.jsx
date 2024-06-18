@@ -1,4 +1,6 @@
 import {useDrugsStore} from "../05 -  helpers/store.js";
+import CardMUI from "../04 - components/CardMUI.jsx";
+import {Grid} from "@mui/material";
 
 const Gallery = () => {
 
@@ -10,14 +12,23 @@ const Gallery = () => {
 
     console.log(drugs)
     return(
-        <ul>
+
+
+            <Grid container spacing={2}>
             {
                 drugs && drugs.length && drugs.map((drug) => {
-                    return <li key={drug.id}>{drug.id}</li>
+                    return <Grid key={drug.id} item xs={12} sm={6}>
+                                <CardMUI info={drug}></CardMUI>
+                            </Grid>
+
                 } )
             }
-        </ul>
+            </Grid>
+
+
     )
+
+
 
 }
 
