@@ -5,8 +5,6 @@ import {router} from "./01 - router/index.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <main className={'body'}>
-            <RouterProvider router={router}/>
-      </main>
-      </React.StrictMode>
+        <RouterProvider router={router}/>
+  </React.StrictMode>
 )

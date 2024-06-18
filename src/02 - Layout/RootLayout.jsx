@@ -6,9 +6,9 @@ const RootLayout = () => {
     return(
     <>
         <CustomHeader></CustomHeader>
-        <section>
+        <main>
             <Outlet></Outlet>
-        </section>
+        </main>
     </>
 )
 }
