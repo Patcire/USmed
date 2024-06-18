@@ -1,0 +1,15 @@
+
+.card__purpose{
+    text-wrap: pretty;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+
+.card__unknown{
+    color: #706f6f;
+}
+

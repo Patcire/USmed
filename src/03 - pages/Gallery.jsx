@@ -14,16 +14,16 @@ const Gallery = () => {
     return(
 
 
-            <Grid container spacing={2}>
-            {
-                drugs && drugs.length && drugs.map((drug) => {
-                    return <Grid key={drug.id} item xs={12} sm={6}>
-                                <CardMUI info={drug}></CardMUI>
-                            </Grid>
+        <Grid container spacing={2} sx={{paddingTop: 4, paddingBottom: 12}}>
+        {
+            drugs && drugs.length && drugs.map((drug) => {
+                return <Grid key={drug.id} item xs={12} sm={6}>
+                            <CardMUI info={drug}></CardMUI>
+                        </Grid>
 
-                } )
-            }
-            </Grid>
+            } )
+        }
+        </Grid>
 
 
     )

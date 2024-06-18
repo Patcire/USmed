@@ -38,6 +38,11 @@ export const Search = () => {
     return (
         <>
             <TextField
+                sx={{
+                    '& .MuiOutlinedInput-root': {
+                        '&.Mui-focused fieldset': {
+                            borderColor: '#f17b19'}}
+                }}
                 className={'header__search'}
                 onChange={handleInputChange}
                 placeholder="Search..."
