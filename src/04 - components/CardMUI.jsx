@@ -1,9 +1,22 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import {Button, CardActions} from "@mui/material";
+import {useNavigate} from "react-router-dom";
+import {useDrugsStore} from "../05 -  helpers/store.js";
 
 const CardMUI = (drug) => {
-    console.log('drug', drug.info)
+
+
+    const navigate = useNavigate()
+    const { selectedDrug, cleansSelectedDrug } = useDrugsStore((state) => ({
+        selectedDrug: state.selectedDrug,
+        cleansSelectedDrug: state.cleansSelectedDrug,
+    }));
+
+    const goToDrugFullInfo = () => {
+        navigate('/product')
+    }
+
     return (
         <Card sx={{ maxWidth: 300, minHeight:220, maxHeight:220, padding: 2}}>
             <CardContent sx={{minHeight: 160, maxHeight: 160}}>
@@ -27,7 +40,11 @@ const CardMUI = (drug) => {
                 }
             </CardContent>
             <CardActions>
-            <Button size="small" sx={{color: '#f17b19', '&:hover':{backgroundColor: 'rgba(112,111,111,0.06)'}}}>More info</Button>
+            <Button
+                onClick={goToDrugFullInfo}
+                size="small"
+                sx={{color: '#f17b19', '&:hover':{backgroundColor: 'rgba(112,111,111,0.06)'}}}
+            >More info</Button>
         </CardActions>
     </Card>)
 }
