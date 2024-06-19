@@ -8,12 +8,12 @@ const CardMUI = (drug) => {
 
 
     const navigate = useNavigate()
-    const { selectedDrug, cleansSelectedDrug } = useDrugsStore((state) => ({
-        selectedDrug: state.selectedDrug,
-        cleansSelectedDrug: state.cleansSelectedDrug,
+    const { updateSelectedDrug } = useDrugsStore((state) => ({
+        updateSelectedDrug: state.updateSelectedDrug,
     }));
 
     const goToDrugFullInfo = () => {
+        updateSelectedDrug(drug.info)
         navigate('/product')
     }
 

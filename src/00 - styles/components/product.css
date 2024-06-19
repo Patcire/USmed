@@ -1,0 +1,18 @@
+
+.product__header{
+    display: flex;
+    flex-direction: row;
+    padding: 8% 0 5% 0;
+}
+
+.product__info{
+    padding: 1% 0 0 0;
+}
+
+.product__separator{
+    margin-top: 4% ;
+}
+
+.product__paragraph{
+    padding-top: 2%
+}

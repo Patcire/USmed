@@ -13,7 +13,6 @@ const Gallery = () => {
     console.log(drugs)
     return(
 
-
         <Grid container spacing={2} sx={{paddingTop: 4, paddingBottom: 12}}>
         {
             drugs && drugs.length && drugs.map((drug) => {
