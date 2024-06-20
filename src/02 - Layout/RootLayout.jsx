@@ -8,7 +8,7 @@ const RootLayout = () => {
     <>
         <CustomHeader></CustomHeader>
         <main>
-            <Container maxWidth="md">
+            <Container maxWidth="sm" sx={{marginTop: 2}}>
                 <Outlet></Outlet>
             </Container>
         </main>

@@ -18,8 +18,8 @@ const CardMUI = (drug) => {
     }
 
     return (
-        <Card sx={{ maxWidth: 300, minHeight:220, maxHeight:220, padding: 2}}>
-            <CardContent sx={{minHeight: 160, maxHeight: 160}}>
+        <Card sx={{ minHeight:220, maxHeight:220, padding: 2}}>
+            <CardContent sx={{minHeight: 150, maxHeight: 150, overflow: 'hidden'}}>
                 {
                     drug.info.openfda.brand_name ?
                         <p><strong>Brand name</strong>: {drug.info.openfda.brand_name}</p>

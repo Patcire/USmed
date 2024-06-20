@@ -16,20 +16,21 @@ const Product = () => {
 
    return(
        <Container maxWidth="sm" sx={{paddingBottom: 12}}>
+           <Button
+               onClick={goBack}
+               size= 'medium'
+               variant='outlined'
+               sx={{
+                   borderColor: '#f17b19',
+                   width: 0,
+                   '&:hover': {
+                       backgroundColor: 'rgba(112,111,111,0.06)',
+                       borderColor: '#f17b19',
+                   }
+               }}
+               startIcon={<ArrowBackIcon  sx={{color: '#f17b19'}} />}
+           />
            <header className={'product__header'}>
-               <Button onClick={goBack}
-                       size= 'small'
-                       sx={{
-                           borderColor: '#f17b19',
-                           width: 0,
-                           '&:hover': {
-                               backgroundColor: 'rgba(112,111,111,0.06)',
-                               borderColor: '#f17b19',
-                           }
-                       }}
-                       startIcon={<ArrowBackIcon  sx={{color: '#f17b19'}} />}
-               />
-
                {
                    selectedDrug.openfda.brand_name ?
                        <h1><strong>Brand name</strong>: {selectedDrug.openfda.brand_name}</h1>

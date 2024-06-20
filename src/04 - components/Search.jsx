@@ -39,6 +39,7 @@ export const Search = () => {
         <>
             <TextField
                 sx={{
+                    minWidth: 120,
                     '& .MuiOutlinedInput-root': {
                         '&.Mui-focused fieldset': {
                             borderColor: '#f17b19'}}

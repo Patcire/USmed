@@ -2,7 +2,7 @@
 .product__header{
     display: flex;
     flex-direction: row;
-    padding: 8% 0 5% 0;
+    padding: 2% 0 5% 0;
 }
 
 .product__info{
