@@ -8,26 +8,25 @@ export const Search = () => {
 
     // variables-states
     const [keyword, setKeyword] = useState('')
-    const { updateDrugs } = useDrugsStore((state) => ({
+    const { updateDrugs, updateKeyWord, updateTotalPagesOfSearch} = useDrugsStore((state) => ({
         updateDrugs: state.updateDrugs,
+        updateKeyWord: state.updateKeyWord,
+        updateTotalPagesOfSearch: state.updateTotalPagesOfSearch
     }));
 
-
     // methods
-
     const handleInputChange = (e) => {
         setKeyword(e.target.value)
-        console.log(keyword)
     }
-
 
     const handleSearch = async (keyword) => {
         const searchedDrugs = await callAPI(0, keyword)
+        updateKeyWord(keyword)
         await updateDrugs(searchedDrugs.results)
+        await updateTotalPagesOfSearch(Math.ceil(searchedDrugs.meta.results.total/20))
     }
 
     // hooks
-
     useEffect (() => {
         handleSearch(keyword)
     }, [keyword]);

@@ -1,12 +1,16 @@
 .header{
     display: flex;
     flex-direction: row;
-    padding: 5% 10% 2% 10%;
+    padding: 3% 10% 2% 10%;
     align-items: flex-end;
     justify-content: space-between;
     font-family: Ebrima, serif;
     border-bottom: 1px solid gray;
     /*background-color: #03B5AA;*/
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
     .header__logo{
         display: flex;
         flex-direction: column;

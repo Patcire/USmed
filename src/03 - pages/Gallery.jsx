@@ -2,14 +2,30 @@ import {useDrugsStore} from "../05 -  helpers/store.js";
 import CardMUI from "../04 - components/CardMUI.jsx";
 import {Box, CircularProgress, Container, Grid, Pagination} from "@mui/material";
 import theme from "../00 - styles/muiBreakpoints/breakpoints.js";
+import {callAPI} from "../05 -  helpers/API.js";
+import {useState} from "react";
 
 
 const Gallery = () => {
 
-    const { drugs } = useDrugsStore((state) => ({
+    //variables-const
+    const [page, setPage] = useState(1)
+    const { drugs , updateDrugs, lastKeyWord, totalPagesOfSearch} = useDrugsStore((state) => ({
         drugs: state.drugs,
+        updateDrugs: state.updateDrugs,
+        lastKeyWord: state.lastKeyWord,
+        totalPagesOfSearch: state.totalPagesOfSearch
     }));
 
+    // methods
+
+    const handlePagination = async (event, value) => {
+        setPage(value)
+        let searchedDrugs = await callAPI( 20*page-1 , lastKeyWord)
+        await updateDrugs(searchedDrugs.results)
+    }
+
+    // render
     return(
         drugs && drugs.length ?
         (<Container>
@@ -24,7 +40,9 @@ const Gallery = () => {
                 } )
             }
             </Grid>
+
             <Pagination
+                onChange={handlePagination}
                 sx={{
                     paddingLeft: 14,
                     paddingBottom: 12,
@@ -33,9 +51,11 @@ const Gallery = () => {
                         paddingLeft: 2.5
                     },
                 }}
-                count={5} variant="outlined"
+                count={totalPagesOfSearch}
+                variant="outlined"
                 shape="rounded"
             />
+
         </Container>)
             :
         <Box display={'flex'} justifyContent={'center'} paddingTop={10}>
