@@ -17,11 +17,11 @@ export const Search = () => {
     // methods
     const handleInputChange = (e) => {
         setKeyword(e.target.value)
+        updateKeyWord(e.target.value)
     }
 
     const handleSearch = async (keyword) => {
-        const searchedDrugs = await callAPI(0, keyword)
-        updateKeyWord(keyword)
+        const searchedDrugs = await callAPI(0, keyword )
         await updateDrugs(searchedDrugs.results)
         await updateTotalPagesOfSearch(Math.ceil(searchedDrugs.meta.results.total/20))
     }
