@@ -21,7 +21,7 @@ const Gallery = () => {
 
     const handlePagination = async (event, value) => {
         setPage(value)
-        let searchedDrugs = await callAPI( 20*page-1 , lastKeyWord)
+        let searchedDrugs = await callAPI( 20*value-1 , lastKeyWord)
         await updateDrugs(searchedDrugs.results)
     }
 
